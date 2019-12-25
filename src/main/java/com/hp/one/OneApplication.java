@@ -3,7 +3,7 @@ package com.hp.one;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//
+//trial
 @SpringBootApplication
 public class OneApplication {
 
