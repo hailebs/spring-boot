@@ -1,4 +1,4 @@
-package com.hp.one.model;
+package com.hp.student.model;
 import javax.persistence.*;
 
 @Entity

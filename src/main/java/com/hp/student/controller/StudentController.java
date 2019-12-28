@@ -1,14 +1,13 @@
-package com.hp.one.controller;
+package com.hp.student.controller;
 
-import com.hp.one.model.Student;
-import com.hp.one.repo.StudentRepository;
+import com.hp.student.model.Student;
+import com.hp.student.repo.StudentRepository;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
