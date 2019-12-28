@@ -20,12 +20,15 @@ public class StudentController {
         this.studentRepository = studentService;
     }
 
+    //
     @GetMapping("/students")
     public Iterable<Student> retrieveAllStudents() {
 
         //List<Student> all_st = new List<Student>();
         return studentRepository.findAll();//.findAll();
     }
+
+    //
     @GetMapping("st")
     public ResponseEntity<List<Student>> getAllEmployees() {
         Iterable<Student> list = studentRepository.findAll();
@@ -33,6 +36,7 @@ public class StudentController {
         return new ResponseEntity<List<Student>>((List<Student>) list, new HttpHeaders(), HttpStatus.OK);
     }
 
+    //
     @GetMapping("/c")
     public Long ret() {
 
@@ -40,12 +44,13 @@ public class StudentController {
         return studentRepository.count();//.findAll();
     }
 
+    //
     @DeleteMapping("/students/{id}")
     public void deleteStudent(@PathVariable long id) {
         studentRepository.deleteById(id);
     }
 
-
+    //
     @RequestMapping("/home")
     public String home(){
         return "Y Y Y Y Y Y Y Y Y Y Y";
