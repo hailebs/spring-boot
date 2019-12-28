@@ -1,11 +1,9 @@
 package com.hp.one.model;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Student {
+
     @Id
     @GeneratedValue
     public Long id;
@@ -16,6 +14,12 @@ public class Student {
 
 
     public Student() {
+    }
+
+    public Student(Long id, String name, String passportNumber) {
+        this.id= id;
+        this.name = name;
+        this.passportNumber = passportNumber;
     }
 
     public Long getId() {
