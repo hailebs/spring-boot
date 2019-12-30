@@ -23,15 +23,15 @@ public class StudentController {
 
     //
     @GetMapping("/all")
-    public Iterable<Student> retrieveAllStudents() {
-        //
+    public Iterable<Student> getAllStudents() {
+
         return studentService.list();
     }
 
 
     //
     @GetMapping("/{id}")
-    public Student getById(@PathVariable long id) {
+    public Student getStudent(@PathVariable long id) {
         return studentService.getById(id);
     }
 
@@ -39,18 +39,18 @@ public class StudentController {
     //
     @GetMapping("/count")
     public Long getCount() {
-        //
+
         return studentService.getCount();
     }
 
 
     //
     @PostMapping("/register")
-    public Student Register(@Valid @RequestBody Student student){
+    public Student register(@Valid @RequestBody Student student){
 
         return studentService.save(student);
     }
-
+    /*
     //
     @PutMapping("/{id}")
     public ResponseEntity<?> Update(@PathVariable ("id") Long id, @Valid @RequestBody Student student){
@@ -63,9 +63,15 @@ public class StudentController {
         currentStudent.setPassportNumber(student.getPassportNumber());
         studentService.save(currentStudent);
         return new ResponseEntity<Student>(currentStudent, HttpStatus.OK);
+    }*/
 
+    @PutMapping("/{id}")
+    public Student update(@PathVariable (value = "id") Long id, @Valid @RequestBody Student student){
+
+        return studentService.update(id, student);
     }
 
+    /*
     //
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable ("id") Long id){
@@ -79,8 +85,13 @@ public class StudentController {
 
         studentService.delete(id);
         return new  ResponseEntity<Void>(HttpStatus.NO_CONTENT);
-    }
+    }*/
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable ("id") Long id){
+
+        studentService.delete(id);
+    }
 
 
         @DeleteMapping("/")
